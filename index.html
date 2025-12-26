@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>الحديقة المرعبة - AI Horror Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://upload-widget.cloudinary.com/global/all.js" async></script>
+    <style>
+      body {
+        font-family: 'Cairo', sans-serif;
+        background-color: #050505;
+        color: white;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      ::-webkit-scrollbar { display: none; }
+      * { scrollbar-width: none; -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+      
+      @keyframes marquee-r-to-l { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+      .animate-marquee-r-to-l { display: flex; width: max-content; animation: marquee-r-to-l 12s linear infinite; }
+      
+      /* حركة جديدة من اليسار إلى اليمين */
+      @keyframes marquee-l-to-r { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+      .animate-marquee-l-to-r { display: flex; width: max-content; animation: marquee-l-to-r 15s linear infinite; }
+
+      .loading-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        background: #ef4444;
+        z-index: 2000;
+        transition: width 0.3s ease;
+      }
+      .fade-in { animation: fadeIn 0.5s ease-out forwards; }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
